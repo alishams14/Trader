@@ -13,10 +13,10 @@ import trend
 # secret_key = str(input("Secret key: "))
 # symbol = str(input("Symbol: "))
 
-api_key = ""
-secret_key = ""
-symbol = ""
-
+api_key = "mNuuD3irlkl+KG4PYXghDFJvgRcx6vao"
+secret_key = "yxSpqcJ4dEQBdmnld6cVHCS5iMVCDkcR"
+symbol = "TNTUSD"
+print('Starting...')
 
 # In[2]:
 
@@ -155,14 +155,14 @@ def sell_logic():
 while True:
     if buy_logic():
         candles_5 = get_candle("M5")
+        url = "https://api.hitbtc.com/api/2/trading/balance"
         last_close = float(candles_5[98]["close"]) * 0.99
-        response = requests.get('https://api.hitbtc.com/api/2/trading/balance',
-                        auth=(api_key, secret_key))
+        response = requests.get(url, auth=(api_key, secret_key))
         quantity = 0
         for i in response.json():
             if i['currency'] == 'USD':
                 if float(i['available']) > 10:
-                    quantity = i['available']
+                   quantity = i['available']
         
         data = {
             "symbol": symbol,
@@ -174,6 +174,9 @@ while True:
         result = request("POST", url, data)
         print("\033[33m%s\033[0m" % result.json())
     else:
+        url = "https://api.hitbtc.com/api/2/trading/balance"
+        response = requests.get(url, auth=(api_key, secret_key))
+        print(response.json())
         print("\033[31mStrategy failed!\033[0m")
     time.sleep(10)
 
