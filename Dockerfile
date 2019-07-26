@@ -1,6 +1,6 @@
 FROM broccoli:latest
 
-RUN pip install requests ta
+RUN pip install requests pandas
 
 COPY . /app
 
@@ -10,7 +10,7 @@ CMD ["python" , "core.py"]
 
 FROM broccoli:latest
 
-RUN pip install requests ta
+RUN pip install requests pandas
 
 COPY . /app
 
@@ -20,7 +20,7 @@ CMD ["python" , "util.py"]
 
 FROM broccoli:latest
 
-RUN pip install requests ta
+RUN pip install requests pandas
 
 COPY . /app
 
@@ -30,7 +30,7 @@ CMD ["python" , "trend.py"]
 
 FROM broccoli:latest
 
-RUN pip install requests ta
+RUN pip install requests pandas
 
 COPY . /app
 
@@ -40,7 +40,7 @@ CMD ["python" , "temp.py"]
 
 FROM broccoli:latest
 
-RUN pip install requests ta
+RUN pip install requests pandas
 
 COPY . /app
 
@@ -50,7 +50,7 @@ CMD ["python" , "momentum.py"]
 
 FROM broccoli:latest
 
-RUN pip install requests ta
+RUN pip install requests pandas
 
 COPY . /app
 
