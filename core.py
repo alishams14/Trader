@@ -13,8 +13,8 @@ import trend
 # secret_key = str(input("Secret key: "))
 # symbol = str(input("Symbol: "))
 
-api_key = "2a/MIxvveBwfG0OVi2v3l9RW3HdAhqUu"
-secret_key = "kG4YK4H2T0Ake5NQSBmGHh9Bj9+hRoEG"
+api_key = ""
+secret_key = ""
 symbol = "TNTUSD"
 print('Starting...')
 
